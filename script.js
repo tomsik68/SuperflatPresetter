@@ -1,14 +1,16 @@
 /**
  * @author Tomsik68
  */
+var layerCount = 15;
+var version = "2";
 function createBlockSelection() {
 	for (var i = 0; i < blocks.length; i++) {
 		document.write("<option value='" + blocks[i][0] + "'>" + blocks[i][1] + "</option>");
 	}
 }
 
-function createLayerSelections(count) {
-	for (var i = 0; i < count; i++) {
+function createLayerSelections() {
+	for (var i = 0; i < layerCount; i++) {
 		document.write('<tr><td>');
 		document.write('<select id="block_' + i + '">');
 		createBlockSelection();
@@ -19,7 +21,7 @@ function createLayerSelections(count) {
 }
 
 function generate() {
-	
+	var result = "";
 	
 	var biome = document.getElementById("global_biome").value;
 	var villages = document.getElementById("villages").checked;
@@ -36,8 +38,19 @@ function generate() {
 	var decoration = document.getElementById("decoration").checked;
 	var waterLakes = document.getElementById("waterlakes").checked;
 	var lavaLakes = document.getElementById("lavalakes").checked;
-	//TODO parse layers
-	
+	//parsing layers
+	for(var i = 0;i<layerCount;++i){
+		if(document.getElementById("l"+i+"_top").value == "" || document.getElementById("l"+i+"_bottom").value){
+			continue;
+		}
+		var block = document.getElementById("block_"+i).value;
+		var top = parseInt(document.getElementById("l"+i+"_top").value);
+		var bottom = parseInt(document.getElementById("l"+i+"_bottom").value);
+	}
+	//parsing structures
+	if(biome != ""){
+		
+	}
 	document.getElementById("output").innerHTML = "Hello World";
 	alert("Don't press the button again, or the page will reset! Your code was generated!");
 	$("#output").slideToggle();
