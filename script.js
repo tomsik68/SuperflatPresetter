@@ -48,7 +48,7 @@ function generate() {
 	var strongholdCount = document.getElementById("strongholdcount").value;
 	var strongholdSpread = document.getElementById("strongholdspread").value;
 	var biomeFeatures = document.getElementById("biomefeatures").checked;
-	var featureDist = document.getElementById("featuresDistance");
+	var featureDist = document.getElementById("featuresDistance").value;
 	var dungeons = document.getElementById("dungeons").checked;
 	var decoration = document.getElementById("decoration").checked;
 	var waterLakes = document.getElementById("waterlakes").checked;
