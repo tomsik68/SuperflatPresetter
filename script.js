@@ -12,7 +12,7 @@ function createBlockSelection() {
 function createLayerSelections() {
 	for (var i = 0; i < layerCount; i++) {
 		document.write('<tr><td>');
-		document.write('<select id="block_' + i + '">');
+		document.write('<select value="undefined" id="block_' + i + '">');
 		createBlockSelection();
 		document.write('</select>');
 		document.write('</td><td><input type="number" placeholder="Bottom" id="l' + i + '_bottom" /></td><td><input type="number" placeholder="Top" id="l' + i + '_top" /></td>');
@@ -20,9 +20,21 @@ function createLayerSelections() {
 	}
 }
 
+function getLowestLayer(layers) {
+	var layer = null;
+	for (var i = 0; i < layers.length; ++i) {
+		if(layer == null)
+			layer = layers[i];
+		if (layers[i].b < layer.b) {
+			layer = layers[i].b;
+		}
+	}
+	return layer;
+}
+
 function generate() {
 	var result = "";
-	
+
 	var biome = document.getElementById("global_biome").value;
 	var villages = document.getElementById("villages").checked;
 	var villageSize = document.getElementById("villagesize").value;
@@ -39,20 +51,38 @@ function generate() {
 	var waterLakes = document.getElementById("waterlakes").checked;
 	var lavaLakes = document.getElementById("lavalakes").checked;
 	//parsing layers
-	for(var i = 0;i<layerCount;++i){
-		if(document.getElementById("l"+i+"_top").value == "" || document.getElementById("l"+i+"_bottom").value){
-			continue;
+	var layers = [];
+	var layerString = "";
+	for (var i = 0; i < layerCount; ++i) {
+		var block = document.getElementById("block_" + i).value;
+		var top = parseInt(document.getElementById("l" + i + "_top").value);
+		var bottom = parseInt(document.getElementById("l" + i + "_bottom").value);
+		if (block != "undefined" && !isNaN(top) && !isNaN(bottom)) {
+			layers.push({
+				bl : block,
+				t : top,
+				b : bottom
+			});
 		}
-		var block = document.getElementById("block_"+i).value;
-		var top = parseInt(document.getElementById("l"+i+"_top").value);
-		var bottom = parseInt(document.getElementById("l"+i+"_bottom").value);
 	}
+	var lastTop = 0;
+	for (var i = 0; i < layers.length; ++i) {
+		var layer = getLowestLayer(layers);
+		layers.splice(layers.indexOf(layer), 1);
+		if (layer.b > lastTop) {
+			layerString += ","+(layer.b - lastTop) + "x0";
+		}
+		lastTop = layer.t;
+
+		layerString += "," + (layer.t - layer.b) + "x" + layer.bl;
+	}
+	layerString = layerString.replace(",", "");
+	result = version + ";" + layerString + ";" + biome + ";";
 	//parsing structures
-	if(biome != ""){
-		
-	}
-	document.getElementById("output").innerHTML = "Hello World";
+	var structures = "";
+
+	document.getElementById("output").innerHTML = result;
 	alert("Don't press the button again, or the page will reset! Your code was generated!");
-	$("#output").slideToggle();
-	
+	$("#output").slideDown();
+
 }
