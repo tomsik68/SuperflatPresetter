@@ -102,7 +102,7 @@ function generate() {
 		structures += ",lake";
 	if(lavaLakes)
 		structures += ",lava_lake";
-		
+	structures = structures.replace(",","");
 	result += structures;
 	document.getElementById("output").innerHTML = result;
 	alert("Don't press the button again, or the page will reset! Your code was generated!");
