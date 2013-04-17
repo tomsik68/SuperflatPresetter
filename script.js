@@ -22,11 +22,13 @@ function createLayerSelections() {
 
 function getLowestLayer(layers) {
 	var layer = null;
-	for (var i = 0; i < layers.length; ++i) {
-		if(layer == null)
-			layer = layers[i];
-		if (layers[i].b < layer.b) {
-			layer = layers[i].b;
+	for (var i = 0; i < layerCount; ++i) {
+		if (layers[i] != null) {
+			if (layer == null)
+				layer = layers[i];
+			if (layers[i].b < layer.b) {
+				layer = layers[i].b;
+			}
 		}
 	}
 	return layer;
@@ -66,15 +68,17 @@ function generate() {
 		}
 	}
 	var lastTop = 0;
-	for (var i = 0; i < layers.length; ++i) {
+	for (var i = 0; i < layerCount; ++i) {
 		var layer = getLowestLayer(layers);
-		layers.splice(layers.indexOf(layer), 1);
-		if (layer.b > lastTop) {
-			layerString += ","+(layer.b - lastTop) + "x0";
+		if (layer != null) {
+			layers.splice(layers.indexOf(layer), 1);
+			//add additional air between 2 layers
+			if (layer.b > lastTop) {
+				layerString += "," + (layer.b - lastTop) + "x0";
+			}
+			lastTop = layer.t;
+			layerString += "," + (layer.t - layer.b) + "x" + layer.bl;
 		}
-		lastTop = layer.t;
-
-		layerString += "," + (layer.t - layer.b) + "x" + layer.bl;
 	}
 	layerString = layerString.replace(",", "");
 	result = version + ";" + layerString + ";" + biome + ";";
