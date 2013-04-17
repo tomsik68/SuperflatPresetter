@@ -22,13 +22,6 @@ function createLayerSelections() {
 
 function getLowestLayer(layers) {
 	var layer = null;
-<<<<<<< HEAD
-	for (var i = 0; i < layers.length; ++i) {
-		if(layer == null)
-			layer = layers[i];
-		if (layers[i].b < layer.b) {
-			layer = layers[i].b;
-=======
 	for (var i = 0; i < layerCount; ++i) {
 		if (layers[i] != null) {
 			if (layer == null)
@@ -36,7 +29,6 @@ function getLowestLayer(layers) {
 			if (layers[i].b < layer.b) {
 				layer = layers[i].b;
 			}
->>>>>>> gh-pages
 		}
 	}
 	return layer;
@@ -50,12 +42,13 @@ function generate() {
 	var villageSize = document.getElementById("villagesize").value;
 	var villageDist = document.getElementById("villagedistance").value;
 	var mineshafts = document.getElementById("mineshafts").checked;
-	var mineshaftChance = document.getElementById("mineshaftchance").value;
+	var mineshaftChance = document.getElementById("mineshaftchance").value/100;
 	var strongholds = document.getElementById("strongholds").checked;
 	var strongholdDistance = document.getElementById("strongholddistance").value;
 	var strongholdCount = document.getElementById("strongholdcount").value;
 	var strongholdSpread = document.getElementById("strongholdspread").value;
 	var biomeFeatures = document.getElementById("biomefeatures").checked;
+	var featureDist = document.getElementById("featuresDistance");
 	var dungeons = document.getElementById("dungeons").checked;
 	var decoration = document.getElementById("decoration").checked;
 	var waterLakes = document.getElementById("waterlakes").checked;
@@ -90,9 +83,27 @@ function generate() {
 	}
 	layerString = layerString.replace(",", "");
 	result = version + ";" + layerString + ";" + biome + ";";
+	
 	//parsing structures
 	var structures = "";
-
+	if(villages)
+		structures += ",village(size="+villageSize+" distance="+villageDist+")";
+	if(strongholds)
+		structures += ",stronghold(distance="+strongholdDistance+" count="+strongholdCount+" spread="+strongholdSpread+")";
+	if(mineshafts)
+		structures += ",mineshaft(chance="+(mineshaftChance)+")";
+	if(biomeFeatures)
+		structures += ",biome_1(distance="+featureDist+")";
+	if(dungeons)
+		structures += ",dungeon";
+	if(decoration)
+		structures += ",decoration";
+	if(waterLakes)
+		structures += ",lake";
+	if(lavaLakes)
+		structures += ",lava_lake";
+		
+	result += structures;
 	document.getElementById("output").innerHTML = result;
 	alert("Don't press the button again, or the page will reset! Your code was generated!");
 	$("#output").slideDown();
