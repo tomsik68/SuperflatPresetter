@@ -12,10 +12,10 @@ function createBlockSelection() {
 function createLayerSelections() {
 	for (var i = 0; i < layerCount; i++) {
 		document.write('<tr><td>');
-		document.write('<select value="undefined" id="block_' + i + '">');
+		document.write('<select onchange="javascript:updateWP()" value="undefined" id="block_' + i + '">');
 		createBlockSelection();
 		document.write('</select>');
-		document.write('</td><td><input type="number" placeholder="Bottom" id="l' + i + '_bottom" /></td><td><input type="number" placeholder="Top" id="l' + i + '_top" /></td>');
+		document.write('</td><td><input onchange="javascript:updateWP()" type="number" placeholder="Bottom" id="l' + i + '_bottom" /></td><td><input type="number" onchange="javascript:updateWP()" placeholder="Top" id="l' + i + '_top" /></td>');
 		document.write('</tr>');
 	}
 }
@@ -33,7 +33,22 @@ function getLowestLayer(layers) {
 	}
 	return layer;
 }
-
+function parseLayers(){
+	var layers = [];
+	for (var i = 0; i < layerCount; ++i) {
+		var block = document.getElementById("block_" + i).value;
+		var top = parseInt(document.getElementById("l" + i + "_top").value);
+		var bottom = parseInt(document.getElementById("l" + i + "_bottom").value);
+		if (block != "undefined" && !isNaN(top) && !isNaN(bottom)) {
+			layers.push({
+				bl : block,
+				t : top,
+				b : bottom
+			});
+		}
+	}
+	return layers;
+}
 function generate() {
 	var result = "";
 
@@ -54,20 +69,9 @@ function generate() {
 	var waterLakes = document.getElementById("waterlakes").checked;
 	var lavaLakes = document.getElementById("lavalakes").checked;
 	//parsing layers
-	var layers = [];
+	var layers = parseLayers();
 	var layerString = "";
-	for (var i = 0; i < layerCount; ++i) {
-		var block = document.getElementById("block_" + i).value;
-		var top = parseInt(document.getElementById("l" + i + "_top").value);
-		var bottom = parseInt(document.getElementById("l" + i + "_bottom").value);
-		if (block != "undefined" && !isNaN(top) && !isNaN(bottom)) {
-			layers.push({
-				bl : block,
-				t : top,
-				b : bottom
-			});
-		}
-	}
+	
 	var lastTop = 0;
 	for (var i = 0; i < layerCount; ++i) {
 		var layer = getLowestLayer(layers);
@@ -105,7 +109,6 @@ function generate() {
 	structures = structures.replace(",","");
 	result += structures;
 	document.getElementById("output").innerHTML = result;
-	alert("Don't press the button again, or the page will reset! Your code was generated!");
 	$("#output").slideDown();
 
 }
