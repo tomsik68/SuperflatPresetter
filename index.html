@@ -8,7 +8,6 @@
 			.header {
 				width: 100%;
 				text-align: center;
-				
 			}
 			input.num {
 				width: 100px;
@@ -24,10 +23,23 @@
 				border-color: black;
 				border-style: dashed;
 			}
-			.worldpreview{
+			#worldpreview {
 				position: fixed;
 				top: 0px;
 				left: 0px;
+				width: 100%;
+			}
+			.wp {
+				width: 100%;
+				height: 8px;
+				background-repeat: repeat-x;
+			}
+			.main_container {
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 100%;
+				text-align: center;
 			}
 		</style>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
@@ -35,7 +47,7 @@
 		<script src="blocks.js" type="text/javascript"></script>
 		<script src="script.js" type="text/javascript"></script>
 		<script src="worldpreviewbuilder.js" type="text/javascript"></script>
-		
+
 		<script type="text/javascript">
 			$(document).ready(function() {
 				$("#output").slideUp();
@@ -43,165 +55,417 @@
 
 		</script>
 	</head>
+
 	<body>
 		<div id="worldpreview">
-		
+			<img src='' alt='' class='wp' id='wp_249' />
+			<img src='' alt='' class='wp' id='wp_248' />
+			<img src='' alt='' class='wp' id='wp_247' />
+			<img src='' alt='' class='wp' id='wp_246' />
+			<img src='' alt='' class='wp' id='wp_245' />
+			<img src='' alt='' class='wp' id='wp_244' />
+			<img src='' alt='' class='wp' id='wp_243' />
+			<img src='' alt='' class='wp' id='wp_242' />
+			<img src='' alt='' class='wp' id='wp_241' />
+			<img src='' alt='' class='wp' id='wp_240' />
+			<img src='' alt='' class='wp' id='wp_239' />
+			<img src='' alt='' class='wp' id='wp_238' />
+			<img src='' alt='' class='wp' id='wp_237' />
+			<img src='' alt='' class='wp' id='wp_236' />
+			<img src='' alt='' class='wp' id='wp_235' />
+			<img src='' alt='' class='wp' id='wp_234' />
+			<img src='' alt='' class='wp' id='wp_233' />
+			<img src='' alt='' class='wp' id='wp_232' />
+			<img src='' alt='' class='wp' id='wp_231' />
+			<img src='' alt='' class='wp' id='wp_230' />
+			<img src='' alt='' class='wp' id='wp_229' />
+			<img src='' alt='' class='wp' id='wp_228' />
+			<img src='' alt='' class='wp' id='wp_227' />
+			<img src='' alt='' class='wp' id='wp_226' />
+			<img src='' alt='' class='wp' id='wp_225' />
+			<img src='' alt='' class='wp' id='wp_224' />
+			<img src='' alt='' class='wp' id='wp_223' />
+			<img src='' alt='' class='wp' id='wp_222' />
+			<img src='' alt='' class='wp' id='wp_221' />
+			<img src='' alt='' class='wp' id='wp_220' />
+			<img src='' alt='' class='wp' id='wp_219' />
+			<img src='' alt='' class='wp' id='wp_218' />
+			<img src='' alt='' class='wp' id='wp_217' />
+			<img src='' alt='' class='wp' id='wp_216' />
+			<img src='' alt='' class='wp' id='wp_215' />
+			<img src='' alt='' class='wp' id='wp_214' />
+			<img src='' alt='' class='wp' id='wp_213' />
+			<img src='' alt='' class='wp' id='wp_212' />
+			<img src='' alt='' class='wp' id='wp_211' />
+			<img src='' alt='' class='wp' id='wp_210' />
+			<img src='' alt='' class='wp' id='wp_209' />
+			<img src='' alt='' class='wp' id='wp_208' />
+			<img src='' alt='' class='wp' id='wp_207' />
+			<img src='' alt='' class='wp' id='wp_206' />
+			<img src='' alt='' class='wp' id='wp_205' />
+			<img src='' alt='' class='wp' id='wp_204' />
+			<img src='' alt='' class='wp' id='wp_203' />
+			<img src='' alt='' class='wp' id='wp_202' />
+			<img src='' alt='' class='wp' id='wp_201' />
+			<img src='' alt='' class='wp' id='wp_200' />
+			<img src='' alt='' class='wp' id='wp_199' />
+			<img src='' alt='' class='wp' id='wp_198' />
+			<img src='' alt='' class='wp' id='wp_197' />
+			<img src='' alt='' class='wp' id='wp_196' />
+			<img src='' alt='' class='wp' id='wp_195' />
+			<img src='' alt='' class='wp' id='wp_194' />
+			<img src='' alt='' class='wp' id='wp_193' />
+			<img src='' alt='' class='wp' id='wp_192' />
+			<img src='' alt='' class='wp' id='wp_191' />
+			<img src='' alt='' class='wp' id='wp_190' />
+			<img src='' alt='' class='wp' id='wp_189' />
+			<img src='' alt='' class='wp' id='wp_188' />
+			<img src='' alt='' class='wp' id='wp_187' />
+			<img src='' alt='' class='wp' id='wp_186' />
+			<img src='' alt='' class='wp' id='wp_185' />
+			<img src='' alt='' class='wp' id='wp_184' />
+			<img src='' alt='' class='wp' id='wp_183' />
+			<img src='' alt='' class='wp' id='wp_182' />
+			<img src='' alt='' class='wp' id='wp_181' />
+			<img src='' alt='' class='wp' id='wp_180' />
+			<img src='' alt='' class='wp' id='wp_179' />
+			<img src='' alt='' class='wp' id='wp_178' />
+			<img src='' alt='' class='wp' id='wp_177' />
+			<img src='' alt='' class='wp' id='wp_176' />
+			<img src='' alt='' class='wp' id='wp_175' />
+			<img src='' alt='' class='wp' id='wp_174' />
+			<img src='' alt='' class='wp' id='wp_173' />
+			<img src='' alt='' class='wp' id='wp_172' />
+			<img src='' alt='' class='wp' id='wp_171' />
+			<img src='' alt='' class='wp' id='wp_170' />
+			<img src='' alt='' class='wp' id='wp_169' />
+			<img src='' alt='' class='wp' id='wp_168' />
+			<img src='' alt='' class='wp' id='wp_167' />
+			<img src='' alt='' class='wp' id='wp_166' />
+			<img src='' alt='' class='wp' id='wp_165' />
+			<img src='' alt='' class='wp' id='wp_164' />
+			<img src='' alt='' class='wp' id='wp_163' />
+			<img src='' alt='' class='wp' id='wp_162' />
+			<img src='' alt='' class='wp' id='wp_161' />
+			<img src='' alt='' class='wp' id='wp_160' />
+			<img src='' alt='' class='wp' id='wp_159' />
+			<img src='' alt='' class='wp' id='wp_158' />
+			<img src='' alt='' class='wp' id='wp_157' />
+			<img src='' alt='' class='wp' id='wp_156' />
+			<img src='' alt='' class='wp' id='wp_155' />
+			<img src='' alt='' class='wp' id='wp_154' />
+			<img src='' alt='' class='wp' id='wp_153' />
+			<img src='' alt='' class='wp' id='wp_152' />
+			<img src='' alt='' class='wp' id='wp_151' />
+			<img src='' alt='' class='wp' id='wp_150' />
+			<img src='' alt='' class='wp' id='wp_149' />
+			<img src='' alt='' class='wp' id='wp_148' />
+			<img src='' alt='' class='wp' id='wp_147' />
+			<img src='' alt='' class='wp' id='wp_146' />
+			<img src='' alt='' class='wp' id='wp_145' />
+			<img src='' alt='' class='wp' id='wp_144' />
+			<img src='' alt='' class='wp' id='wp_143' />
+			<img src='' alt='' class='wp' id='wp_142' />
+			<img src='' alt='' class='wp' id='wp_141' />
+			<img src='' alt='' class='wp' id='wp_140' />
+			<img src='' alt='' class='wp' id='wp_139' />
+			<img src='' alt='' class='wp' id='wp_138' />
+			<img src='' alt='' class='wp' id='wp_137' />
+			<img src='' alt='' class='wp' id='wp_136' />
+			<img src='' alt='' class='wp' id='wp_135' />
+			<img src='' alt='' class='wp' id='wp_134' />
+			<img src='' alt='' class='wp' id='wp_133' />
+			<img src='' alt='' class='wp' id='wp_132' />
+			<img src='' alt='' class='wp' id='wp_131' />
+			<img src='' alt='' class='wp' id='wp_130' />
+			<img src='' alt='' class='wp' id='wp_129' />
+			<img src='' alt='' class='wp' id='wp_128' />
+			<img src='' alt='' class='wp' id='wp_127' />
+			<img src='' alt='' class='wp' id='wp_126' />
+			<img src='' alt='' class='wp' id='wp_125' />
+			<img src='' alt='' class='wp' id='wp_124' />
+			<img src='' alt='' class='wp' id='wp_123' />
+			<img src='' alt='' class='wp' id='wp_122' />
+			<img src='' alt='' class='wp' id='wp_121' />
+			<img src='' alt='' class='wp' id='wp_120' />
+			<img src='' alt='' class='wp' id='wp_119' />
+			<img src='' alt='' class='wp' id='wp_118' />
+			<img src='' alt='' class='wp' id='wp_117' />
+			<img src='' alt='' class='wp' id='wp_116' />
+			<img src='' alt='' class='wp' id='wp_115' />
+			<img src='' alt='' class='wp' id='wp_114' />
+			<img src='' alt='' class='wp' id='wp_113' />
+			<img src='' alt='' class='wp' id='wp_112' />
+			<img src='' alt='' class='wp' id='wp_111' />
+			<img src='' alt='' class='wp' id='wp_110' />
+			<img src='' alt='' class='wp' id='wp_109' />
+			<img src='' alt='' class='wp' id='wp_108' />
+			<img src='' alt='' class='wp' id='wp_107' />
+			<img src='' alt='' class='wp' id='wp_106' />
+			<img src='' alt='' class='wp' id='wp_105' />
+			<img src='' alt='' class='wp' id='wp_104' />
+			<img src='' alt='' class='wp' id='wp_103' />
+			<img src='' alt='' class='wp' id='wp_102' />
+			<img src='' alt='' class='wp' id='wp_101' />
+			<img src='' alt='' class='wp' id='wp_100' />
+			<img src='' alt='' class='wp' id='wp_99' />
+			<img src='' alt='' class='wp' id='wp_98' />
+			<img src='' alt='' class='wp' id='wp_97' />
+			<img src='' alt='' class='wp' id='wp_96' />
+			<img src='' alt='' class='wp' id='wp_95' />
+			<img src='' alt='' class='wp' id='wp_94' />
+			<img src='' alt='' class='wp' id='wp_93' />
+			<img src='' alt='' class='wp' id='wp_92' />
+			<img src='' alt='' class='wp' id='wp_91' />
+			<img src='' alt='' class='wp' id='wp_90' />
+			<img src='' alt='' class='wp' id='wp_89' />
+			<img src='' alt='' class='wp' id='wp_88' />
+			<img src='' alt='' class='wp' id='wp_87' />
+			<img src='' alt='' class='wp' id='wp_86' />
+			<img src='' alt='' class='wp' id='wp_85' />
+			<img src='' alt='' class='wp' id='wp_84' />
+			<img src='' alt='' class='wp' id='wp_83' />
+			<img src='' alt='' class='wp' id='wp_82' />
+			<img src='' alt='' class='wp' id='wp_81' />
+			<img src='' alt='' class='wp' id='wp_80' />
+			<img src='' alt='' class='wp' id='wp_79' />
+			<img src='' alt='' class='wp' id='wp_78' />
+			<img src='' alt='' class='wp' id='wp_77' />
+			<img src='' alt='' class='wp' id='wp_76' />
+			<img src='' alt='' class='wp' id='wp_75' />
+			<img src='' alt='' class='wp' id='wp_74' />
+			<img src='' alt='' class='wp' id='wp_73' />
+			<img src='' alt='' class='wp' id='wp_72' />
+			<img src='' alt='' class='wp' id='wp_71' />
+			<img src='' alt='' class='wp' id='wp_70' />
+			<img src='' alt='' class='wp' id='wp_69' />
+			<img src='' alt='' class='wp' id='wp_68' />
+			<img src='' alt='' class='wp' id='wp_67' />
+			<img src='' alt='' class='wp' id='wp_66' />
+			<img src='' alt='' class='wp' id='wp_65' />
+			<img src='' alt='' class='wp' id='wp_64' />
+			<img src='' alt='' class='wp' id='wp_63' />
+			<img src='' alt='' class='wp' id='wp_62' />
+			<img src='' alt='' class='wp' id='wp_61' />
+			<img src='' alt='' class='wp' id='wp_60' />
+			<img src='' alt='' class='wp' id='wp_59' />
+			<img src='' alt='' class='wp' id='wp_58' />
+			<img src='' alt='' class='wp' id='wp_57' />
+			<img src='' alt='' class='wp' id='wp_56' />
+			<img src='' alt='' class='wp' id='wp_55' />
+			<img src='' alt='' class='wp' id='wp_54' />
+			<img src='' alt='' class='wp' id='wp_53' />
+			<img src='' alt='' class='wp' id='wp_52' />
+			<img src='' alt='' class='wp' id='wp_51' />
+			<img src='' alt='' class='wp' id='wp_50' />
+			<img src='' alt='' class='wp' id='wp_49' />
+			<img src='' alt='' class='wp' id='wp_48' />
+			<img src='' alt='' class='wp' id='wp_47' />
+			<img src='' alt='' class='wp' id='wp_46' />
+			<img src='' alt='' class='wp' id='wp_45' />
+			<img src='' alt='' class='wp' id='wp_44' />
+			<img src='' alt='' class='wp' id='wp_43' />
+			<img src='' alt='' class='wp' id='wp_42' />
+			<img src='' alt='' class='wp' id='wp_41' />
+			<img src='' alt='' class='wp' id='wp_40' />
+			<img src='' alt='' class='wp' id='wp_39' />
+			<img src='' alt='' class='wp' id='wp_38' />
+			<img src='' alt='' class='wp' id='wp_37' />
+			<img src='' alt='' class='wp' id='wp_36' />
+			<img src='' alt='' class='wp' id='wp_35' />
+			<img src='' alt='' class='wp' id='wp_34' />
+			<img src='' alt='' class='wp' id='wp_33' />
+			<img src='' alt='' class='wp' id='wp_32' />
+			<img src='' alt='' class='wp' id='wp_31' />
+			<img src='' alt='' class='wp' id='wp_30' />
+			<img src='' alt='' class='wp' id='wp_29' />
+			<img src='' alt='' class='wp' id='wp_28' />
+			<img src='' alt='' class='wp' id='wp_27' />
+			<img src='' alt='' class='wp' id='wp_26' />
+			<img src='' alt='' class='wp' id='wp_25' />
+			<img src='' alt='' class='wp' id='wp_24' />
+			<img src='' alt='' class='wp' id='wp_23' />
+			<img src='' alt='' class='wp' id='wp_22' />
+			<img src='' alt='' class='wp' id='wp_21' />
+			<img src='' alt='' class='wp' id='wp_20' />
+			<img src='' alt='' class='wp' id='wp_19' />
+			<img src='' alt='' class='wp' id='wp_18' />
+			<img src='' alt='' class='wp' id='wp_17' />
+			<img src='' alt='' class='wp' id='wp_16' />
+			<img src='' alt='' class='wp' id='wp_15' />
+			<img src='' alt='' class='wp' id='wp_14' />
+			<img src='' alt='' class='wp' id='wp_13' />
+			<img src='' alt='' class='wp' id='wp_12' />
+			<img src='' alt='' class='wp' id='wp_11' />
+			<img src='' alt='' class='wp' id='wp_10' />
+			<img src='' alt='' class='wp' id='wp_9' />
+			<img src='' alt='' class='wp' id='wp_8' />
+			<img src='' alt='' class='wp' id='wp_7' />
+			<img src='' alt='' class='wp' id='wp_6' />
+			<img src='' alt='' class='wp' id='wp_5' />
+			<img src='' alt='' class='wp' id='wp_4' />
+			<img src='' alt='' class='wp' id='wp_3' />
+			<img src='' alt='' class='wp' id='wp_2' />
+			<img src='' alt='' class='wp' id='wp_1' />
+			<img src='' alt='' class='wp' id='wp_0' />
 		</div>
-		<div class="header">
-			<h1>MineCraft Flatlands Presetter</h1>
-			<BR>
-			<h3><a href="http://www.minecraftwiki.net/wiki/Superflat">Check some nice documentation about these options </a></h3>
+		<div class="main_container">
+			<div class="header">
+				<h1>MineCraft Flatlands Presetter</h1>
+				<BR>
+				<h3><a href="http://www.minecraftwiki.net/wiki/Superflat">Check some nice documentation about these options </a></h3>
+			</div>
+			<div class="main" align="center">
+				<form>
+					<table class="main" cellspacing="0px">
+						<tr class="a">
+							<td>Gloabal Biome</td><td>
+							<select id="global_biome">
+								<!-- Generated by: biome_choices.py -->
+								<option value='0'>Ocean</option>
+								<option value='1'>Plains</option>
+								<option value='2'>Desert</option>
+								<option value='3'>Extreme Hills</option>
+								<option value='4'>Forest</option>
+								<option value='5'>Taiga</option>
+								<option value='6'>Swampland</option>
+								<option value='7'>River</option>
+								<option value='8'>Nether</option>
+								<option value='9'>End</option>
+								<option value='10'>Frozen Ocean</option>
+								<option value='11'>Frozen River</option>
+								<option value='12'>Ice Plains</option>
+								<option value='13'>Ice Mountains</option>
+								<option value='14'>Mushroom Island</option>
+								<option value='15'>Mushroom Island Shore</option>
+								<option value='16'>Beach</option>
+								<option value='17'>Desert Hills</option>
+								<option value='18'>Forest Hills</option>
+								<option value='19'>Taiga Hills</option>
+								<option value='20'>Extreme Hills Edge</option>
+								<option value='21'>Jungle</option>
+								<option value='22'>Jungle Hills</option>
+							</select></td>
+						</tr>
+						<tr class="b">
+							<td>Villages</td><td>
+							<table>
+								<tr>
+									<td>
+									<input type="checkbox" id="villages" />
+									Generate Villages</td>
+								</tr>
+								<tr>
+									<td>
+									<input class='num' min=0 placeholder="Size" type="number" id="villagesize" />
+									</td>
+								</tr>
+								<tr>
+									<td>
+									<input placeholder="Distance" min='9' class='num' type="number" id="villagedistance" />
+									</td>
+								</tr>
+							</table></td>
+						</tr>
+						<tr class = "a">
+							<td> Mineshafts </td><td>
+							<table>
+								<tr>
+									<td>
+									<input type="checkbox" id="mineshafts" />
+									Generate</td>
+								</tr>
+								<tr>
+									<td>
+									<input id="mineshaftchance" class="num" placeholder="Chance" type="number" min=0 max=100>
+									</td>
+								</tr>
+							</table></td>
+						</tr>
+						<tr class="b">
+							<td>Stronghold(s)</td><td>
+							<table>
+								<tr>
+									<td>
+									<input type="checkbox" id="strongholds" />
+									Generate</td>
+								</tr>
+								<tr>
+									<td>
+									<input id="strongholddistance" class="num" type="number" min=1 placeholder="Distance" />
+									</td>
+								</tr>
+								<tr>
+									<td>
+									<input id="strongholdcount" class="num" type="number" min=0 placeholder="Count" />
+									</td>
+								</tr>
+								<tr>
+									<td>
+									<input id="strongholdspread" class="num" type="number" min=0 placeholder="Spread" />
+									</td>
+								</tr>
+							</table></td>
+						</tr>
+						<tr class = "a">
+							<td title="Witch Huts, Temples">Biome Features</td><td>
+							<table>
+								<tr>
+									<td>
+									<input type="checkbox" id="biomefeatures" />
+									Generate</td>
+								</tr>
+								<tr>
+									<td>
+									<input class="num" type="number" id="featuresDistance" placeholder="Max. Distance" />
+									</td>
+								</tr>
+							</table></td>
+						</tr>
+						<tr class="b">
+							<td>Dungeons</td><td>
+							<input type="checkbox" id="dungeons" />
+							Generate</td>
+						</tr>
+						<tr class="a">
+							<td title="Ores & Plants etc.">Decoration</td><td>
+							<input type="checkbox" id="decoration" />
+							Generate</td>
+						</tr>
+						<tr class="b">
+							<td>Lakes</td>
+							<td>
+							<table>
+								<tr>
+									<td>
+									<input type="checkbox" id="waterlakes" />
+									Water Lakes</td>
+								</tr>
+								<tr>
+									<td>
+									<input type="checkbox" id="lavalakes" />
+									Lava Lakes</td>
+								</tr>
+							</table></td>
+						</tr>
+						<tr class="a">
+							<td title="Describes what blocks your world consists of">Layers</td><td>
+							<table>
+								<script type="text/javascript">
+									createLayerSelections();
+								</script>
+							</table></td>
+						</tr>
+						<tr class="b">
+							<td colspan=2>
+							<input type="button" onclick="generate()" value="Get your preset code!"/>
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+			<div id="output"></div>
+			<sub>By: Tomsik68</sub>
 		</div>
-		<div align="center">
-			<form>
-				<table class="main" cellspacing="0px">
-					<tr class="a">
-						<td>Gloabal Biome</td><td>
-						<select id="global_biome">
-							<!-- Generated by: biome_choices.py -->
-							<option value='0'>Ocean</option>
-							<option value='1'>Plains</option>
-							<option value='2'>Desert</option>
-							<option value='3'>Extreme Hills</option>
-							<option value='4'>Forest</option>
-							<option value='5'>Taiga</option>
-							<option value='6'>Swampland</option>
-							<option value='7'>River</option>
-							<option value='8'>Nether</option>
-							<option value='9'>End</option>
-							<option value='10'>Frozen Ocean</option>
-							<option value='11'>Frozen River</option>
-							<option value='12'>Ice Plains</option>
-							<option value='13'>Ice Mountains</option>
-							<option value='14'>Mushroom Island</option>
-							<option value='15'>Mushroom Island Shore</option>
-							<option value='16'>Beach</option>
-							<option value='17'>Desert Hills</option>
-							<option value='18'>Forest Hills</option>
-							<option value='19'>Taiga Hills</option>
-							<option value='20'>Extreme Hills Edge</option>
-							<option value='21'>Jungle</option>
-							<option value='22'>Jungle Hills</option>
-						</select></td>
-					</tr>
-					<tr class="b">
-						<td>Villages</td><td>
-						<table>
-							<tr>
-								<td>
-								<input type="checkbox" id="villages" />
-								Generate Villages</td>
-							</tr>
-							<tr>
-								<td>
-								<input class='num' min=0 placeholder="Size" type="number" id="villagesize" />
-								</td>
-							</tr>
-							<tr>
-								<td>
-								<input placeholder="Distance" min='9' class='num' type="number" id="villagedistance" />
-								</td>
-							</tr>
-						</table></td>
-					</tr>
-					<tr class = "a">
-						<td> Mineshafts </td><td>
-						<table>
-							<tr>
-								<td>
-								<input type="checkbox" id="mineshafts" />
-								Generate</td>
-							</tr>
-							<tr>
-								<td>
-								<input id="mineshaftchance" class="num" placeholder="Chance" type="number" min=0 max=100>
-								</td>
-							</tr>
-						</table></td>
-					</tr>
-					<tr class="b">
-						<td>Stronghold(s)</td><td>
-						<table>
-							<tr>
-								<td>
-								<input type="checkbox" id="strongholds" />
-								Generate</td>
-							</tr>
-							<tr>
-								<td>
-								<input id="strongholddistance" class="num" type="number" min=1 placeholder="Distance" />
-								</td>
-							</tr>
-							<tr>
-								<td>
-								<input id="strongholdcount" class="num" type="number" min=0 placeholder="Count" />
-								</td>
-							</tr>
-							<tr>
-								<td>
-								<input id="strongholdspread" class="num" type="number" min=0 placeholder="Spread" />
-								</td>
-							</tr>
-						</table></td>
-					</tr>
-					<tr class = "a">
-						<td title="Witch Huts, Temples">Biome Features</td><td>
-						<table>
-							<tr>
-								<td>
-								<input type="checkbox" id="biomefeatures" />
-								Generate</td>
-							</tr>
-							<tr>
-								<td>
-								<input class="num" type="number" id="featuresDistance" placeholder="Max. Distance" />
-								</td>
-							</tr>
-						</table></td>
-					</tr>
-					<tr class="b">
-						<td>Dungeons</td><td>
-						<input type="checkbox" id="dungeons" />
-						Generate</td>
-					</tr>
-					<tr class="a">
-						<td title="Ores & Plants etc.">Decoration</td><td>
-						<input type="checkbox" id="decoration" />
-						Generate</td>
-					</tr>
-					<tr class="b">
-						<td>Lakes</td>
-						<td>
-						<table>
-							<tr>
-								<td>
-								<input type="checkbox" id="waterlakes" />
-								Water Lakes</td>
-							</tr>
-							<tr>
-								<td>
-								<input type="checkbox" id="lavalakes" />
-								Lava Lakes</td>
-							</tr>
-						</table></td>
-					</tr>
-					<tr class="a">
-						<td title="Describes what blocks your world consists of">Layers</td><td>
-						<table>
-							<script type="text/javascript">
-								createLayerSelections();
-							</script>
-						</table></td>
-					</tr>
-					<tr class="b">
-						<td colspan=2>
-						<input type="button" onclick="generate()" value="Get your preset code!"/>
-						</td>
-					</tr>
-				</table>
-			</form>
-		</div>
-		<div id="output"></div>
-		<sub>By: Tomsik68</sub>
 	</body>
 </html>

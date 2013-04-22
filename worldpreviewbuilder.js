@@ -1,27 +1,40 @@
 /**
  * @author Tomsik68
  */
-function getBlockImageTag(blockID){
-	return "<img src='blocks/"+blockID+"'/>";
+function getBlockImageURL(blockID) {
+	return "blocks/" + blockID + ".png";
 }
-function updateWP(){
+
+function updateWP() {
 	var layers = parseLayers();
 	var e = document.getElementById("worldpreview");
-	buildPreview(e,layers);
+	buildPreview(e, layers);
 }
-function buildPreview(e, layers){
-	makeTable(e);
-}
-function makeTable(e){
-	e.innerHTML = "<table>";
-	for(var y = 0;y < 250;++y ){
-		e.innerHTML += "<tr>";
-		for(var x = 0;x < 100;++x){
-			e.innerHTML += "<td>";
-			e.innerHTML += "<span class='wp' id='wp_"+x+";"+y+"'></span>";
-			e.innerHTML += "</td>";
-		}
-		e.innerHTML += "</tr>";
+
+function buildPreview(e, layers) {
+	for (var i = 0; i < 250; ++i) {
+		setLayer(i, 0);
 	}
-	e.innerHTML += "</table>";
+	for (var i = 0; i < layers.length; ++i) {
+		var layer = layers[i];
+		if (layer != null)
+			for (var l = layer.b; l < layer.t; ++l) {
+				setLayer(l, layer.bl);
+			}
+	}
+}
+
+function setLayer(y, blockID) {
+	if (blockID == "0") {
+		$("#wp_" + y).fadeOut();
+	} else
+		$("#wp_" + y).fadeIn();
+	document.getElementById("wp_" + y).src = getBlockImageURL(blockID);
+	document.getElementById("wp_" + y).title = blockID;
+}
+
+function makeLayout(e) {
+	for (var i = 0; i < 250; i++) {
+		e.innerHTML += "<div class='wp' id='wp_" + i + "'></div>";
+	}
 }

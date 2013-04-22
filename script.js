@@ -33,22 +33,24 @@ function getLowestLayer(layers) {
 	}
 	return layer;
 }
-function parseLayers(){
+
+function parseLayers() {
 	var layers = [];
 	for (var i = 0; i < layerCount; ++i) {
 		var block = document.getElementById("block_" + i).value;
 		var top = parseInt(document.getElementById("l" + i + "_top").value);
 		var bottom = parseInt(document.getElementById("l" + i + "_bottom").value);
 		if (block != "undefined" && !isNaN(top) && !isNaN(bottom)) {
-			layers.push({
+			layers[i] = {
 				bl : block,
 				t : top,
 				b : bottom
-			});
+			};
 		}
 	}
 	return layers;
 }
+
 function generate() {
 	var result = "";
 
@@ -57,7 +59,7 @@ function generate() {
 	var villageSize = document.getElementById("villagesize").value;
 	var villageDist = document.getElementById("villagedistance").value;
 	var mineshafts = document.getElementById("mineshafts").checked;
-	var mineshaftChance = document.getElementById("mineshaftchance").value/100;
+	var mineshaftChance = document.getElementById("mineshaftchance").value / 100;
 	var strongholds = document.getElementById("strongholds").checked;
 	var strongholdDistance = document.getElementById("strongholddistance").value;
 	var strongholdCount = document.getElementById("strongholdcount").value;
@@ -71,7 +73,7 @@ function generate() {
 	//parsing layers
 	var layers = parseLayers();
 	var layerString = "";
-	
+
 	var lastTop = 0;
 	for (var i = 0; i < layerCount; ++i) {
 		var layer = getLowestLayer(layers);
@@ -87,26 +89,26 @@ function generate() {
 	}
 	layerString = layerString.replace(",", "");
 	result = version + ";" + layerString + ";" + biome + ";";
-	
+
 	//parsing structures
 	var structures = "";
-	if(villages)
-		structures += ",village(size="+villageSize+" distance="+villageDist+")";
-	if(strongholds)
-		structures += ",stronghold(distance="+strongholdDistance+" count="+strongholdCount+" spread="+strongholdSpread+")";
-	if(mineshafts)
-		structures += ",mineshaft(chance="+(mineshaftChance)+")";
-	if(biomeFeatures)
-		structures += ",biome_1(distance="+featureDist+")";
-	if(dungeons)
+	if (villages)
+		structures += ",village(size=" + villageSize + " distance=" + villageDist + ")";
+	if (strongholds)
+		structures += ",stronghold(distance=" + strongholdDistance + " count=" + strongholdCount + " spread=" + strongholdSpread + ")";
+	if (mineshafts)
+		structures += ",mineshaft(chance=" + (mineshaftChance) + ")";
+	if (biomeFeatures)
+		structures += ",biome_1(distance=" + featureDist + ")";
+	if (dungeons)
 		structures += ",dungeon";
-	if(decoration)
+	if (decoration)
 		structures += ",decoration";
-	if(waterLakes)
+	if (waterLakes)
 		structures += ",lake";
-	if(lavaLakes)
+	if (lavaLakes)
 		structures += ",lava_lake";
-	structures = structures.replace(",","");
+	structures = structures.replace(",", "");
 	result += structures;
 	document.getElementById("output").innerHTML = result;
 	$("#output").slideDown();

@@ -21,6 +21,7 @@
             if(stristr($line,'<td class="id"') != FALSE){
                 $id = str_replace('<td class="id">', '', $line);
                 $id = str_replace(' ','',$id);  //remove whitespaces
+                $id = str_replace(':','_',$id);
                 $id = trim(preg_replace('/\s\s+/', ' ', $id));
             }
             if(stristr($line,'<td class="name">') != FALSE){
