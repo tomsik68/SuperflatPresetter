@@ -2,7 +2,7 @@
  * @author Tomsik68
  */
 function getBlockImageURL(blockID) {
-	return "blocks/" + blockID + ".png";
+	return "url('blocks/" + blockID + ".png')";
 }
 
 function updateWP() {
@@ -29,8 +29,7 @@ function setLayer(y, blockID) {
 		$("#wp_" + y).fadeOut();
 	} else
 		$("#wp_" + y).fadeIn();
-	document.getElementById("wp_" + y).src = getBlockImageURL(blockID);
-	document.getElementById("wp_" + y).title = blockID;
+	$("#wp_"+y).css("background-image",getBlockImageURL(blockID));
 }
 
 function makeLayout(e) {
